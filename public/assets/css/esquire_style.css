@@ -1,0 +1,53 @@
+/* font-family: 'Molle', cursive; <i class="fab fa-jenkins"></i> <i class="far fa-save"></i>
+<i class="far fa-trash-alt"></i> <i class="fas fa-undo"></i>*/
+.container {
+  background: #353a3f;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 990px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 990px;
+  }
+}
+.navbar-brand {
+  font-family: "Molle", cursive;
+}
+
+.btn-warning {
+  background-color: #ff5104;
+  border-color: #f8f9fa;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
+  background-color: #ffa502;
+  border-color: #ffa502;
+}
+
+#scrape-btn-span {
+  color: white;
+  margin-left: 5px;
+}
+
+#esquire-img {
+  width: 100%;
+}
+
+#brand-span {
+  color: #ff5104;
+  font-family: "Molle", cursive;
+  font-size: 30px;
+  text-shadow: 1px 1px white;
+  margin-left: 10px;
+}
+
+#message-span {
+  color: white;
+  font-size: 20px;
+}
