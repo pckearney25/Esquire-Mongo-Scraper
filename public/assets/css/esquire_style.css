@@ -1,5 +1,5 @@
 /* font-family: 'Molle', cursive; <i class="fab fa-jenkins"></i> <i class="far fa-save"></i>
-<i class="far fa-trash-alt"></i> <i class="fas fa-undo"></i>*/
+<i class="far fa-trash-alt"></i> <i class="fas fa-undo"></i> <i class="fas fa-book"></i> <i class="fas fa-pencil-alt"></i>*/
 .container {
   background: #353a3f;
 }
@@ -16,6 +16,7 @@
 }
 .navbar-brand {
   font-family: "Molle", cursive;
+  font-size: 36px;
 }
 
 .btn-warning {
@@ -47,7 +48,61 @@
   margin-left: 10px;
 }
 
+#motto-span {
+  color: white;
+  font-size: 20px;
+}
 #message-span {
   color: white;
   font-size: 20px;
+}
+
+.article-row {
+  margin-bottom: 20px;
+}
+
+.article-row:last-child {
+  padding-bottom: 20px;
+}
+
+.project-content-div {
+  color: white;
+  font-size: 14px;
+}
+
+.article-link {
+  color: #9a6d51;
+}
+.article-link:hover {
+  color: #ff5104;
+}
+.project-button-div {
+  align-content: center;
+}
+.save-btn,
+.have-read-btn,
+.notes-btn,
+.unsave-btn {
+  margin-top: 10px;
+  width: 130px;
+}
+
+.save-btn:hover,
+.save-btn:focus,
+.save-btn:active,
+.notes-btn:hover,
+.notes-btn:focus,
+.notes-btn:active {
+  background-color: #20bf6b;
+  border-color: #20bf6b;
+}
+
+.have-read-btn:hover,
+.have-read-btn:focus,
+.have-read-btn:active,
+.unsave-btn:hover,
+.unsave-btn:focus,
+.unsave-btn:active {
+  background-color: #eb3b5a;
+  border-color: #eb3b5a;
 }

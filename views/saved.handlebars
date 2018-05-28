@@ -28,10 +28,14 @@
     <div class="row">
         <div class="col-12" id="scraper-message-div">
             <span id="brand-span">Esquire Scraper: </span>
-            <span id="message-span">Scrape it. Read it. Style it.</span>
+            <span id="message-span">{{message}}</span>
         </div>
     </div>
 </div>
+<div class="container" id="saved-container">
+    {{#if articles}} {{#each articles}} {{> articles/saved-article-block}} {{/each}}{{/if}}
+</div>
+
 
 
 <script src="/assets/js/scrapes.js"></script>

@@ -34,12 +34,12 @@
     <div class="row">
         <div class="col-12" id="scraper-message-div">
             <span id="brand-span">Esquire Scraper: </span>
-            <span id="message-span">Scrape it. Read it. Style it.</span>
+            <span id="message-span">{{message}}</span>
         </div>
     </div>
 </div>
 <div class="container" id="answers-container">
-    {{#each articles}} {{> articles/scraped-block}} {{/each}}
+    {{#if articles}} {{#each articles}} {{> articles/new-article-block}} {{/each}}{{/if}}
 </div>
 
 

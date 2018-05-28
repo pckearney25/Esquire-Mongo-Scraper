@@ -1,0 +1,28 @@
+<div class="row article-row">
+    <div class="col-sm-12 col-md-3 justify-content-center project-image-div">
+        <img class="img-fluid" src={{this.image}} alt="esq img">
+    </div>
+    <div class="col-sm-12 col-md-6 project-content-div">
+        <div>
+            <b>{{this.title}}</b>
+        </div>
+
+        <div>
+            {{this.description}}
+        </div>
+        <div>
+            <a class="article-link" href={{this.link}}>{{this.link}}</a>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-3 justify-content-center project-button-div">
+        <button class="btn btn-light btn-sm save-btn" data-id={{this._id}}>
+            <i class="far fa-save "></i>
+            <span id="scrape-btn-span ">Save Article</span>
+        </button>
+
+        <button class="btn btn-light btn-sm have-read-btn" data-id={{this._id}}>
+            <i class="fas fa-book"></i>
+            <span id="scrape-btn-span ">Mark As Read</span>
+        </button>
+    </div>
+</div>
