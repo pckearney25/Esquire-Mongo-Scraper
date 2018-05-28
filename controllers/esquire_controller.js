@@ -199,10 +199,24 @@ router.post("/unsave_article/:id", function(req, res) {
   );
 });
 
-module.exports = router;
-//Step 2. Pull all the new articles
-// Note: in this app oldArticle = true is set when Either "Home" or "Saved Articles" is selected.
+// Creates a new note, associates with proper article, returns article info.
+router.post("/create_associate_note/:id", function(req, res) {
+  db.Note.create(req.body)
+    .then(function(dbNote) {
+      return db.Article.findOneAndUpdate(
+        { _id: req.params.id },
+        { $push: { notes: dbNote._id } },
+        { new: true }
+      );
+    })
+    .then(function(dbArticle) {
+      // If we were able to successfully update an Article, send it back to the client
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+});
 
-//get all new articles
-//define that as a hanldebars obj
-//send back
+module.exports = router;

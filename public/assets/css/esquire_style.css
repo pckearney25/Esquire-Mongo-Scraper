@@ -1,6 +1,8 @@
 /* font-family: 'Molle', cursive; <i class="fab fa-jenkins"></i> <i class="far fa-save"></i>
 <i class="far fa-trash-alt"></i> <i class="fas fa-undo"></i> <i class="fas fa-book"></i> <i class="fas fa-pencil-alt"></i>*/
-.container {
+.container,
+.modal-footer,
+.modal-header {
   background: #353a3f;
 }
 @media (min-width: 1200px) {
@@ -20,27 +22,34 @@
 }
 
 .btn-warning {
+  background-color: #9a6d51;
+  border-color: #f8f9fa;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
   background-color: #ff5104;
   border-color: #f8f9fa;
 }
 
-.btn-warning:hover,
-.btn-warning:focus,
-.btn-warning:active {
-  background-color: #ffa502;
-  border-color: #ffa502;
+.scrape-btn-li {
+  margin-left: 5px;
 }
-
 #scrape-btn-span {
   color: white;
   margin-left: 5px;
+}
+.fa-jenkins {
+  color: white;
+  font-size: 20px;
 }
 
 #esquire-img {
   width: 100%;
 }
 
-#brand-span {
+#brand-span,
+#modal-span {
   color: #ff5104;
   font-family: "Molle", cursive;
   font-size: 30px;
@@ -105,4 +114,12 @@
 .unsave-btn:active {
   background-color: #eb3b5a;
   border-color: #eb3b5a;
+}
+
+.modal-header {
+  color: white;
+}
+
+.btn-times {
+  color: white;
 }

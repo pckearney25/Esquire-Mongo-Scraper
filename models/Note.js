@@ -1,7 +1,5 @@
 var mongoose = require("mongoose");
 
-var mongoose = require("mongoose");
-
 // Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
 
@@ -9,7 +7,12 @@ var Schema = mongoose.Schema;
 // This is similar to a Sequelize model
 var NoteSchema = new Schema({
   // `title` must be of type String
-  comment: {
+  title: {
+    type: String,
+    required: true
+  },
+  // `body` must be of type String
+  body: {
     type: String,
     required: true
   }
