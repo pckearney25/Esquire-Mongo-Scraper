@@ -3,7 +3,8 @@ $(document).ready(function() {
     event.preventDefault();
     $.get("/scrapes", function(data) {
       if (data) {
-        window.location = "/";
+        console.log(data);
+        location.reload();
       }
     });
   });
@@ -14,7 +15,7 @@ $(document).ready(function() {
 
     $.post("/update_as_saved/" + $(this).attr("data-id"), function(data) {
       if (data) {
-        window.location = "/";
+        location.reload();
       }
     });
   });
@@ -24,7 +25,7 @@ $(document).ready(function() {
     console.log($(this).attr("data-id"));
     $.post("/update_as_read/" + $(this).attr("data-id"), function(data) {
       if (data) {
-        window.location = "/";
+        location.reload();
       }
     });
   });

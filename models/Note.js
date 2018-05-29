@@ -15,6 +15,10 @@ var NoteSchema = new Schema({
   body: {
     type: String,
     required: true
+  },
+  article: {
+    type: Schema.Types.ObjectId,
+    ref: "Article"
   }
 });
 

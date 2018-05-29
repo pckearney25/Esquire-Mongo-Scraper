@@ -53,7 +53,6 @@ router.get("/saved", function(req, res) {
           message: "No saved articles. Go 'Home' and scrape some up!."
         };
       }
-      //....and return them to the "index" view.
       return res.render("saved", hbsObject);
     })
     .catch(function(err) {
@@ -115,10 +114,11 @@ router.get("/scrapes", function(req, res) {
           console.log(err);
         });
     });
+    res.json({ message: "Done: Let's see what we scraped up!" });
   });
-  res.redirect("/");
 });
 
+// Marks an article as saved and read.
 router.post("/update_as_saved/:id", function(req, res) {
   db.Article.update(
     {
@@ -147,6 +147,7 @@ router.post("/update_as_saved/:id", function(req, res) {
   );
 });
 
+//marks an article as read without saving
 router.post("/update_as_read/:id", function(req, res) {
   db.Article.update(
     {
@@ -174,6 +175,7 @@ router.post("/update_as_read/:id", function(req, res) {
   );
 });
 
+//unsaves an article.
 router.post("/unsave_article/:id", function(req, res) {
   db.Article.update(
     {
@@ -201,7 +203,7 @@ router.post("/unsave_article/:id", function(req, res) {
   );
 });
 
-// Creates a new note, associates with proper article, returns article info.
+// creates a new note and adds to parent articles notes.
 router.post("/create_associate_note/:id", function(req, res) {
   db.Note.create(req.body)
     .then(function(dbNote) {
@@ -220,7 +222,24 @@ router.post("/create_associate_note/:id", function(req, res) {
       // If an error occurred, send it to the client
       res.json(err);
     });
-  res.redirect("/saved");
+});
+
+router.post("/delete_disassociate_note/:id", function(req, res) {
+  db.Note.remove({ _id: req.params.id })
+    .then(function(dbNote) {
+      return db.Article.findOneAndUpdate(req.body, {
+        $pull: { notes: req.params.id }
+      });
+    })
+    .then(function(dbArticle) {
+      console.log(dbArticle);
+      // If we were able to successfully update an Article, send it back to the client
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
 });
 
 module.exports = router;
