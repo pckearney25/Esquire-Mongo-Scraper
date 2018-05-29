@@ -38,6 +38,7 @@ router.get("/saved", function(req, res) {
   //Check for saved articles with most recent first.....
   db.Article.find({ savedArticle: true })
     .sort({ _id: -1 })
+    .populate("notes")
     .then(function(dbArticle) {
       if (dbArticle) {
         console.log(dbArticle);
@@ -58,6 +59,7 @@ router.get("/saved", function(req, res) {
     .catch(function(err) {
       // If an error occurred, send it to the client
       console.log(err);
+      res.json(err);
     });
 });
 
@@ -210,6 +212,7 @@ router.post("/create_associate_note/:id", function(req, res) {
       );
     })
     .then(function(dbArticle) {
+      console.log(dbArticle);
       // If we were able to successfully update an Article, send it back to the client
       res.json(dbArticle);
     })
@@ -217,6 +220,7 @@ router.post("/create_associate_note/:id", function(req, res) {
       // If an error occurred, send it to the client
       res.json(err);
     });
+  res.redirect("/saved");
 });
 
 module.exports = router;

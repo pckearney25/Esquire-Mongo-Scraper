@@ -37,3 +37,7 @@
 </div>
 
 <script src="/assets/js/saved.js"></script>
+
+
+<!--modals constructed here-->
+{{#if articles}} {{#each articles}} {{> modals/modal-block}} {{/each}}{{/if}}
