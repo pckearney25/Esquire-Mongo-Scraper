@@ -9,9 +9,9 @@
             </div>
             <div class="modal-body">
                 {{#if this.notes}} {{#each this.notes}}
-                <div class="row" "modal-notes-row justify-content-center">
+                <div class="row modal-notes-row justify-content-center">
 
-                    <div class="col-sm-12 col-md-8 note-content-div">
+                    <div class="col-sm-12 col-md-9 note-content-div">
                         <div>
                             <b>{{this.title}}</b>
                         </div>
@@ -20,22 +20,27 @@
                             {{this.body}}
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-2 note-button-div">
-                        <button class="btn btn-light btn-sm delete-note-btn" data-note-id={{this._id}} data-article-id={{this.article}}>
+                    <div class="col-sm-12 col-md-3 delete-button-div">
+                        <button class="btn btn-danger btn-sm delete-note-btn" data-note-id={{this._id}} data-article-id={{this.article}}>
                             <i class="far fa-trash-alt"></i>
                             <span id="scrape-btn-span ">Delete Note</span>
                         </button>
                     </div>
+
                 </div>
-                {{/each}}{{/if}}
+                <hr> {{/each}}{{/if}}
 
                 <form>
                     <div class="form-group">
-                        <label for="note-title">Note Title:</label>
+                        <label for="note-title">
+                            <b>Note Title:</b>
+                        </label>
                         <input type="text" class="form-control" id="note-title{{this._id}}" placeholder="e.g. Buy these shoes!">
                     </div>
                     <div class="form-group">
-                        <label for="note-body">Note Body:</label>
+                        <label for="note-body">
+                            <b>Note Body:</b>
+                        </label>
                         <textarea class="form-control" id="note-body{{this._id}}" rows="3" placeholder="e.g. Stylish, high quality, and the perfect price!"></textarea>
                     </div>
                     <button type="button" class="btn btn-primary add-note-btn" data-dismiss="modal" data-id={{this._id}}>

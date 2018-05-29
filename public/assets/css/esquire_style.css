@@ -124,7 +124,31 @@
   color: white;
 }
 
+.modal-notes-row {
+  margin-bottom: 10px;
+}
+
+.delete-btn-div {
+  align-content: center;
+}
+.btn-danger {
+  margin-top: 10px;
+  background-color: #808e9b;
+  border-color: #747d8c;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active {
+  background-color: #eb3b5a;
+  border-color: #eb3b5a;
+}
+
 form {
   margin-top: 30px;
-  border-top-color: #353a3f;
+}
+
+.btn-primary {
+  margin-top: 10px;
+  background-color: #1e90ff;
+  border-color: #1e90ff;
 }
